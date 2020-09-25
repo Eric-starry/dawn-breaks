@@ -1,0 +1,31 @@
+.layout-container {
+  .layout-side {
+    .layout-side--logo {
+      height: 48px;
+      border-right: 1px solid #e8e8e8;
+      border-bottom: 1px solid #e8e8e8;
+      img {
+        height: 48px;
+      }
+    }
+    .ant-menu {
+      height: 100%;
+    }
+  }
+  .layout-content {
+    display: flex;
+    flex-direction: column;
+    .app-container {
+      flex: 1 1 auto;
+      .layout-head {
+        text-align: left;
+      }
+      .layout-foot {
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        padding: 4px;
+      }
+    }
+  }
+}
