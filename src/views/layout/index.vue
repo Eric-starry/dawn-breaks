@@ -30,13 +30,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .layout-container {
-    display: flex;
-    .layout-side {
-      flex: 0 0 256px;
-    }
-    .layout-content {
-      flex: 1 1 auto;
-    }
-  }
+  
 </style>

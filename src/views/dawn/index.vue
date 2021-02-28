@@ -14,3 +14,10 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+  .dawn-sketch {
+    color: $primary;
+    font-size: 2rem;
+  }
+</style>

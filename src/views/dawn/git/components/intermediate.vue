@@ -1,11 +1,11 @@
 <template>
   <div class="dawn-git-primary">
     <p>中级篇 -> 远程库操作</p>
-    <p>
+    <pre>
       此处假设你已经拥有一个GitHub账号
       你已经在本地创建了一个Git仓库后，又想在GitHub创建一个Git仓库，并且让这两个仓库进行远程同步，这样，GitHub上的仓库既可以作为备份，又可以让其他人通过该仓库来协作。
-    </p>
-    <p>
+    </pre>
+    <pre>
       登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库
       // Step 1：关联远程库
       git remote add origin 你的远程库
@@ -20,6 +20,15 @@
       // 解除与远程库的关联
       git remote rm origin
 
+      // 修改git远程库地址
+      git remote origin set-url [url]
+
+      // 远程库重命名
+      git remote rename origin [new name]
+      
+      // 查看远程库信息
+      git remote show origin
+
       // 新建本地分支并切换到新建分支
       // 也可以使用 git switch -c dev
       // 以下命令其实是 git branch dev 和 git checkout dev 的简写
@@ -28,6 +37,15 @@
       // 查看本地分支
       // 当前分支前面会标一个*号。
       git branch
+
+      // worktree 使用 (如果 branch 已经被关联到了一个 worktree ，则这次 add 会被拒绝执行，可以通过增加 -f | --force 选项来强制执行。)
+      git worktree add path branch
+
+      // 查看当前项目的所有worktree
+      git worktree list
+
+      // 清除worktree (在删除 worktree 的关联目录之后，清除 worktree 的信息。从而使一个 worktree 完整的删除。)
+      git worktree prune
 
       // git merge 命令用于合并指定分支到当前分支。
       // 把dev分支的工作成果合并到master分支上
@@ -70,6 +88,9 @@
       // 本地dev分支与远程origin/dev分支的链接，设置dev和origin/dev的连接
       git branch --set-upstream-to=origin/dev dev
 
+      // git pull 或 git merge 提示 refusing to merge unrelated histories，表示远程库有提交记录没有和本地库合并，可使用如下命令
+      git pull origin master --allow-unrelated-histories
+
       // rebase操作可以把本地未push的分叉提交历史整理成直线
       git rebase
 
@@ -80,7 +101,7 @@
       bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；
       feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。
 
-    </p>
+    </pre>
   </div>
 </template>
 

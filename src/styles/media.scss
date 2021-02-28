@@ -1,0 +1,16 @@
+
+@media screen and (min-width: 1366) and (max-width: 1919) {
+  html {
+    font-size: 62.5%; // 10px
+  }
+}
+@media screen and (min-width: 1920) and (max-width: 2559) {
+  html {
+    font-size: 100%;  // 16px
+  }
+}
+@media screen and (min-width: 2560) and (max-width: 3440) {
+  html {
+    font-size: 150%;
+  }
+}

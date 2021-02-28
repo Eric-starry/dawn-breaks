@@ -37,8 +37,7 @@
 
     <p>完整的导航流程解析</p>
     <pre>
-      导航被触发。
-      在失活的组件里调用 beforeRouteLeave 守卫。
+      导航被触发。在失活的组件里调用 beforeRouteLeave 守卫。
       调用全局的 beforeEach 守卫。
       在重用的组件里调用 beforeRouteUpdate 守卫 (2.2+)。
       在路由配置里调用 beforeEnter。

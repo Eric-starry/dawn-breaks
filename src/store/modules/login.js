@@ -1,6 +1,7 @@
 const state = {
   token: '',
-  login: false
+  login: false,
+  lang: null
 };
 
 const getters = {
@@ -18,6 +19,9 @@ const mutations = {
   },
   SET_LOGIN: (state, login) => {
     state.login = login;
+  },
+  setLang: (state, lang) => {
+    state.lang = lang;
   }
 };
 

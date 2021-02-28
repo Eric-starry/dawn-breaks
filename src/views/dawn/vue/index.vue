@@ -3,12 +3,10 @@
     <p>vue的成长之路</p>
     <div class="dawn-vue-content">
       <div class="dawn-content-side">
-        <p v-for="comp in comps" :key="comp">
-          <span @click="click(comp)">{{comp}}</span>
-        </p>
+        <a-tag v-for="comp in comps" :key="comp" @click="click(comp)">{{comp}}</a-tag>
       </div>
       <div class="dawn-content-main">
-        <div>
+        <div class="vue-install">
           <p>@vue/cli</p>
           <pre>
             Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统，提供：
@@ -70,16 +68,20 @@
 import navigetionGuard from './components/navigetion-guard.vue';
 import newProject from './components/new-project.vue';
 import vueRouter from './components/vue-router.vue';
+import vueDirective from './components/vue-directive.vue';
+import vueReactive from './components/reactive.vue';
 export default {
   components: {
     'navigetion-guard': navigetionGuard,
     'new-project': newProject,
-    'vue-router': vueRouter
+    'vue-router': vueRouter,
+    'vue-directive': vueDirective,
+    'vue-reactive': vueReactive
   },
   data () {
     return {
       current: 'new-project',
-      comps: ['new-project', 'vue-router', 'navigetion-guard']
+      comps: ['new-project', 'vue-router', 'navigetion-guard', 'vue-directive', 'vue-reactive']
     };
   },
   methods: {
@@ -89,3 +91,10 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+  .vue-install {
+    max-height: 100px;
+    overflow: auto;
+  }
+</style>

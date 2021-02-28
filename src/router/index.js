@@ -5,7 +5,7 @@ import Layout from "../views/layout/index.vue";
 // import Dashboard from '../views/dashboard/index.vue';
 
 const originalPush = VueRouter.prototype.push;
-VueRouter.prototype.push = function push(location) {
+VueRouter.prototype.push = function push (location) {
   return originalPush.call(this, location).catch(err => err);
 };
 Vue.use(VueRouter);
@@ -76,6 +76,18 @@ export const constantRoutes = [
         component: () => import('../views/dawn/vue/index.vue'),
         name: 'Vue',
         cname: 'Vue'
+      },
+      {
+        path: '/dawn/ui',
+        component: () => import('../views/dawn/ui/index.vue'),
+        name: 'Ui',
+        cname: 'Ui'
+      },
+      {
+        path: '/dawn/tool',
+        component: () => import('../views/dawn/tool/index.vue'),
+        name: 'Tool',
+        cname: '工具'
       }
     ]
   },

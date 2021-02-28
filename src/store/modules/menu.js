@@ -1,7 +1,7 @@
 import { constantRoutes, asyncRoutes } from '@/router';
-import { cloneDeep } from 'lodash';
+// import { cloneDeep } from 'lodash';
 
-function hasPermission(roles, route) {
+function hasPermission (roles, route) {
   if (route.meta && route.meta.roles) {
     return roles.some(role => route.meta.roles.includes(role));
   } else {
@@ -9,7 +9,7 @@ function hasPermission(roles, route) {
   }
 }
 
-export function filterAsyncRoutes(routes, roles) {
+export function filterAsyncRoutes (routes, roles) {
   const res = [];
   routes.forEach(route => {
     const tmp = { ...route };
@@ -86,7 +86,7 @@ const mutations = {
 };
 
 const actions = {
-  generateRoutes({ commit }, roles = []) {
+  generateRoutes ({ commit }, roles = []) {
     return new Promise(resolve => {
       let accessedRoutes = [];
       if (roles.includes('admin')) {
